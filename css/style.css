@@ -620,4 +620,120 @@ footer {
     .about-content {
         padding: 25px;
     }
+
+}
+/* ==== PENGATURAN RESPONSIVE (MOBILE & TABLET) ==== */
+
+@media (max-width: 992px) {
+    /* Penyesuaian untuk tablet */
+    .detail-content,
+    .about-content {
+        flex-direction: column; /* Mulai menumpuk di tablet */
+    }
+
+    .detail-left,
+    .detail-right,
+    .about-image,
+    .about-text {
+        flex: 1; /* Reset flex basis */
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Perubahan besar untuk HP */
+    
+    /* ==== Navigasi Mobile ==== */
+    .navbar .container {
+        flex-direction: column; /* Tumpuk logo dan menu */
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        flex-direction: column; /* Tumpuk item menu ke bawah */
+        width: 100%;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+    
+    .nav-menu li {
+        margin-left: 0; /* Hapus margin kiri */
+        margin-top: 5px; /* Beri jarak antar item */
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        padding: 8px 5px;
+        display: block; /* Buat link jadi full-width */
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+    
+    .nav-cta {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box; /* Pastikan padding tidak merusak layout */
+        margin-top: 10px;
+    }
+    
+    /* Atur ulang margin-top konten karena navbar jadi lebih tinggi */
+    .hero {
+        /* Perkiraan tinggi navbar baru: 40px logo + 10px margin + (5 * 35px item) + 40px cta = ~265px. Kita paskan. */
+        margin-top: 250px; 
+        height: 40vh; /* Buat hero lebih pendek */
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    /* Sesuaikan juga padding atas untuk halaman lain */
+    .trip-detail, .about-us, .contact-us, .addon-page {
+        padding-top: 270px; 
+    }
+
+    /* ==== Layout Halaman Detail ==== */
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .detail-header h1 {
+        font-size: 26px;
+    }
+    
+    .detail-price {
+        text-align: left;
+        margin-top: 10px;
+    }
+    
+    .detail-img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Penyesuaian ekstra untuk layar sangat kecil */
+    .hero {
+        margin-top: 250px; /* Navbar tingginya tetap */
+    }
+
+    .trip-detail, .about-us, .contact-us, .addon-page {
+        padding-top: 270px; 
+    }
+
+    .hero h1 {
+        font-size: 32px; /* Kecilkan lagi font hero */
+    }
+
+    .detail-header h1 {
+        font-size: 24px;
+    }
+
+    .detail-price {
+        font-size: 20px;
+    }
 }
